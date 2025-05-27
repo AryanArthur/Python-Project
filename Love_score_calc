@@ -1,0 +1,13 @@
+def calculate_love_score():
+    name1 = input("Whats the first name?").lower()
+    name2 = input("Whats the second name?").lower()
+    name = name1 + name2
+    print(name)
+    true_total = 0
+    love_total = 0
+    for i in "true":
+        true_total = true_total + name.count(i)
+    for j in "love":
+        love_total += name.count(j)
+    print(str(true_total) + str(love_total))
+calculate_love_score()
