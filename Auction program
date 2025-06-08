@@ -1,0 +1,36 @@
+logo = '''
+  <<<<<<<<-----------Welcome to Auction Summers---------------->>>>>>>
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\
+                         `'-------'`
+                       .-------------.
+                      /_______________\
+'''
+print(logo)
+dictionary = {}
+
+def new_user():
+    name = input("Please enter your name")
+    bid_price = int(input("Place your bid price $"))
+    dictionary[name] = bid_price
+    print("\n" * 100)
+should_continue = True
+while should_continue:
+    new_user()
+    anyone_else = input("Is there someone else who wants to place a bid? type 'yes' or 'no'").lower()
+    if anyone_else != "yes":
+        should_continue = False
+        print("Thank you for participating!!")
+
+
+max_bid_value = max(dictionary.values())
+for person, amount in dictionary.items():
+    if amount == max_bid_value:
+        print(f"The Winner of the auction is {person} and ${amount}")
